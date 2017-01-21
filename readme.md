@@ -28,8 +28,27 @@
 
 2. 创建Model: category，category 与 item 为一对多关系，并参照上面完成相应接口
 
+   ```
+   GET /category # 获取全部category
+   GET /category/:categoryId	# 获取一个category
+   POST /category #增加一个category
+   DELETE /category/:categoryId # 删除一个category
+   PUT /category/:categoryId	# 更新一个category
+   POST /category/:categoryId/items # 新建一个item，将其与category对应起来
+   POST /category/:categoryId/items/:itemId # 将现有的item与category对应起来
+   DELETE /category/:categoryId/items/:itemId # 从category中删除指定的item
+   ```
+
 3. 创建Model: cart，cart 与 item 为多对多关系，并参照上面完成相应接口
 
+   ```
+   GET /cart # 获取全部cart
+   GET /cart/:userId	# 获取一个用户的cart
+   POST /cart/:userId #增加一个cart
+   POST /cart/:userId/items/:itemId # 给指定的cart中添加指定的item
+   DELETE /cart/:userId/items/:itemId # 从指定的cart中删除指定的item
+   DELETE /cart/:userId/items # 删除指定cart中的所有的item
+   ```
 ### 进阶篇
 1. 自己编写刷数据库脚本创建上述数据库，并完成功能
 2. 用 supertest + mocha 完成上述接口的集成测试

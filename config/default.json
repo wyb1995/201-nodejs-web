@@ -1,4 +1,5 @@
 {
     "httpPort": 3000,
     "mongoUri": "mongodb://localhost/supermarket"
+    
 }
